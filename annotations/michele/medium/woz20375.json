@@ -1,0 +1,55 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] area south",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] area south"
+},
+{ "prev_bs" : "[restaurant] area south",
+  "user_nlu": "[restaurant] [inform] food do n't care",
+  "prev_act": "[restaurant] [request] food",
+  "out_bs" : "[restaurant] area south food do n't care"
+},
+{ "prev_bs" : "[restaurant] area south food do n't care",
+  "user_nlu": "",
+  "prev_act": "[restaurant] [inform] choice [request] price",
+  "out_bs" : "[restaurant] area south food do n't care"
+},
+{ "prev_bs" : "[restaurant] area south food do n't care",
+  "user_nlu": "[restaurant] [inform] price cheap",
+  "prev_act": "[restaurant] [select] price",
+  "out_bs" : "[restaurant] area south food do n't care pricerange cheap"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] area south",
+  "match":"9",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [request] food"
+},
+{ "prev_act": "[restaurant] [request] food",
+  "curr_bs": "[restaurant] area south food do n't care",
+  "user_nlu": "[restaurant] [inform] food do n't care",
+  "match":"9",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] choice [request] price"
+},
+{ "prev_act": "[restaurant] [inform] choice [request] price",
+  "curr_bs": "[restaurant] area south food do n't care",
+  "user_nlu": "",
+  "match":"9",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [select] price"
+},
+{ "prev_act": "[restaurant] [select] price",
+  "curr_bs": "[restaurant] area south food do n't care pricerange cheap",
+  "user_nlu": "[restaurant] [inform] price cheap",
+  "match":"2",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [inform] name area food choice"
+}
+]
+}

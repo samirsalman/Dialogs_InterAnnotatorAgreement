@@ -1,0 +1,55 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] price moderate area south",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] area south pricerange moderate"
+},
+{ "prev_bs" : "[restaurant] area south pricerange moderate",
+  "user_nlu": "[restaurant] [request] phone ? address ?",
+  "prev_act": "[restaurant] [inform] food choice area name",
+  "out_bs" : "[restaurant] area south pricerange moderate"
+},
+{ "prev_bs" : "[restaurant] area south pricerange moderate",
+  "user_nlu": "[restaurant] [request] postcode ?",
+  "prev_act": "[restaurant] [inform] address name phone",
+  "out_bs" : "[restaurant] area south pricerange moderate"
+},
+{ "prev_bs" : "[restaurant] area south pricerange moderate",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [inform] name postcode",
+  "out_bs" : "[restaurant] area south pricerange moderate"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] price moderate area south",
+  "match":"2",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [inform] food choice area name"
+},
+{ "prev_act": "[restaurant] [inform] food choice area name",
+  "curr_bs": "[restaurant] area south pricerange moderate",
+  "user_nlu": "[restaurant] [request] phone ? address ?",
+  "match":"2",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [inform] address name phone"
+},
+{ "prev_act": "[restaurant] [inform] address name phone",
+  "curr_bs": "[restaurant] area south pricerange moderate",
+  "user_nlu": "[restaurant] [request] postcode ?",
+  "match":"2",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [inform] name postcode"
+},
+{ "prev_act": "[restaurant] [inform] name postcode",
+  "curr_bs": "[restaurant] area south pricerange moderate",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}

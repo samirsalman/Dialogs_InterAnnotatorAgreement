@@ -1,0 +1,42 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] price expensive area north",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] area north pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area north pricerange expensive",
+  "user_nlu": "[restaurant] [inform] time 18:00 day monday people 8 [request] reference ?",
+  "prev_act": "[restaurant] [inform] choice [request] food",
+  "out_bs" : "[restaurant] area north day monday people 8 pricerange expensive time 18:00"
+},
+{ "prev_bs" : "[restaurant] area north day monday people 8 pricerange expensive time 18:00",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [offerbooked] people day time reference name [general] [reqmore]",
+  "out_bs" : "[restaurant] area north day monday name saigon city people 8 pricerange expensive time 18:00"
+}
+],
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] price expensive area north",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] choice [request] food"
+},
+{ "prev_act": "[restaurant] [inform] choice [request] food",
+  "curr_bs": "[restaurant] area north day monday people 8 pricerange expensive time 18:00",
+  "user_nlu": "[restaurant] [inform] time 18:00 day monday people 8 [request] reference ?",
+  "match":"5",
+  "pointer": "0,0,0,1,0,1",
+  "out_act":"[restaurant] [offerbooked] people day time reference name [general] [reqmore]"
+},
+{ "prev_act": "[restaurant] [offerbooked] people day time reference name [general] [reqmore]",
+  "curr_bs": "[restaurant] area north day monday name saigon city people 8 pricerange expensive time 18:00",
+  "user_nlu": "[general] [thank]",
+  "match":"1",
+  "pointer": "0,1,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}

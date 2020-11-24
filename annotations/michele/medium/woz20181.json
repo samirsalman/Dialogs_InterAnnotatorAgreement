@@ -1,0 +1,55 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] food european",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] food european pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] food european pricerange expensive",
+  "user_nlu": "[general] [alternatives]",
+  "prev_act": "[restaurant] [inform] food price name",
+  "out_bs" : "[restaurant] food european pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] food european pricerange expensive",
+  "user_nlu": "[restaurant] [request] area ? address ?",
+  "prev_act": "[restaurant] [inform] price name food",
+  "out_bs" : "[restaurant] food european pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] food european pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [inform] name address area [general] [reqmore]",
+  "out_bs" : "[restaurant] food european pricerange expensive"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] food european",
+  "match":"4",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] food price name"
+},
+{ "prev_act": "[restaurant] [inform] food price name",
+  "curr_bs": "[restaurant] food european pricerange expensive",
+  "user_nlu": "[general] [alternatives]",
+  "match":"4",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] price name food"
+},
+{ "prev_act": "[restaurant] [inform] price name food",
+  "curr_bs": "[restaurant] food european pricerange expensive",
+  "user_nlu": "[restaurant] [request] area ? address ?",
+  "match":"4",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] name address area [general] [reqmore]"
+},
+{ "prev_act": "[restaurant] [inform] name address area [general] [reqmore]",
+  "curr_bs": "[restaurant] food european pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}

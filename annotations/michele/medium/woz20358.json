@@ -1,0 +1,55 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] food italian price expensive",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] food italian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] food italian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] area do n't care",
+  "prev_act": "[restaurant] [inform] food price choice [request] area",
+  "out_bs" : "[restaurant] area do n't care food italian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area do n't care food italian pricerange expensive",
+  "user_nlu": "[restaurant] [request] phone ? address ?",
+  "prev_act": "[restaurant] [inform] name area",
+  "out_bs" : "[restaurant] area do n't care food italian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area do n't care food italian pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [inform] phone name address",
+  "out_bs" : "[restaurant] area do n't care food italian pricerange expensive"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] food italian price expensive",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] food price choice [request] area"
+},
+{ "prev_act": "[restaurant] [inform] food price choice [request] area",
+  "curr_bs": "[restaurant] area do n't care food italian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] area do n't care",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] name area"
+},
+{ "prev_act": "[restaurant] [inform] name area",
+  "curr_bs": "[restaurant] area do n't care food italian pricerange expensive",
+  "user_nlu": "[restaurant] [request] phone ? address ?",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] phone name address"
+},
+{ "prev_act": "[restaurant] [inform] phone name address",
+  "curr_bs": "[restaurant] area do n't care food italian pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}

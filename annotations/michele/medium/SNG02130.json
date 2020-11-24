@@ -1,0 +1,151 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] food venetian area east",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] area east food venetian"
+},
+{ "prev_bs" : "[restaurant] area east food venetian",
+  "user_nlu": "[restaurant] [inform] area east",
+  "prev_act": "[restaurant] [nooffer] food area [request] area",
+  "out_bs" : "[restaurant] area east food venetian"
+},
+{ "prev_bs" : "[restaurant] area east food venetian",
+  "user_nlu": "[restaurant] [inform] area centre",
+  "prev_act": "[restaurant] [request] area",
+  "out_bs" : "[restaurant] area centre food venetian"
+},
+{ "prev_bs" : "[restaurant] area centre food venetian",
+  "user_nlu": "[restaurant] [inform] food indian",
+  "prev_act": "[restaurant] [nooffer] [request] food",
+  "out_bs" : "[restaurant] area centre food indian"
+},
+{ "prev_bs" : "[restaurant] area centre food indian",
+  "user_nlu": "[restaurant] [inform] price expensive",
+  "prev_act": "[restaurant] [inform] area food choice [request] price",
+  "out_bs" : "[restaurant] area centre food indian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food indian price expensive area east",
+  "prev_act": "[restaurant] [inform] food area choice [recommend] name [offerbook]",
+  "out_bs" : "[restaurant] area centre food indian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] name do n't care price expensive area east",
+  "prev_act": "[restaurant] [inform] choice [offerbook]",
+  "out_bs" : "[restaurant] area centre food indian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] time 18:00 day monday",
+  "prev_act": "[restaurant] [request] day",
+  "out_bs" : "[restaurant] area centre food indian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] people 6",
+  "prev_act": "[restaurant] [request] people",
+  "out_bs" : "[restaurant] area centre day monday food indian people 6 pricerange expensive time 18:00"
+},
+{ "prev_bs" : "[restaurant] area centre day monday food indian people 6 pricerange expensive time 18:00",
+  "user_nlu": "[restaurant] [inform] time 17:00",
+  "prev_act": "[restaurant] [nobook] [request] time",
+  "out_bs" : "[restaurant] area centre day monday food indian people 6 pricerange expensive time 18:00"
+},
+{ "prev_bs" : "[restaurant] area centre day monday food indian people 6 pricerange expensive time 18:00",
+  "user_nlu": "[restaurant] [request] reference ?",
+  "prev_act": "",
+  "out_bs" : "[restaurant] area east day monday food indian people 6 pricerange expensive time 17:00"
+},
+{ "prev_bs" : "[restaurant] area east day monday food indian people 6 pricerange expensive time 17:00",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [offerbooked] reference [general] [reqmore]",
+  "out_bs" : "[restaurant] area east day monday food indian people 6 pricerange expensive time 17:00"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] food venetian area east",
+  "match":"0",
+  "pointer": "1,0,0,0,0,0",
+  "out_act":"[restaurant] [nooffer] food area [request] area"
+},
+{ "prev_act": "[restaurant] [nooffer] food area [request] area",
+  "curr_bs": "[restaurant] area east food venetian",
+  "user_nlu": "[restaurant] [inform] area east",
+  "match":"0",
+  "pointer": "1,0,0,0,0,0",
+  "out_act":"[restaurant] [request] area"
+},
+{ "prev_act": "[restaurant] [request] area",
+  "curr_bs": "[restaurant] area centre food venetian",
+  "user_nlu": "[restaurant] [inform] area centre",
+  "match":"0",
+  "pointer": "1,0,0,0,0,0",
+  "out_act":"[restaurant] [nooffer] [request] food"
+},
+{ "prev_act": "[restaurant] [nooffer] [request] food",
+  "curr_bs": "[restaurant] area centre food indian",
+  "user_nlu": "[restaurant] [inform] food indian",
+  "match":"9",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] area food choice [request] price"
+},
+{ "prev_act": "[restaurant] [inform] area food choice [request] price",
+  "curr_bs": "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] price expensive",
+  "match":"6",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] food area choice [recommend] name [offerbook]"
+},
+{ "prev_act": "[restaurant] [inform] food area choice [recommend] name [offerbook]",
+  "curr_bs": "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food indian price expensive area east",
+  "match":"6",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] choice [offerbook]"
+},
+{ "prev_act": "[restaurant] [inform] choice [offerbook]",
+  "curr_bs": "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] name do n't care price expensive area east",
+  "match":"6",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [request] day"
+},
+{ "prev_act": "[restaurant] [request] day",
+  "curr_bs": "[restaurant] area centre food indian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] time 18:00 day monday",
+  "match":"6",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [request] people"
+},
+{ "prev_act": "[restaurant] [request] people",
+  "curr_bs": "[restaurant] area centre day monday food indian people 6 pricerange expensive time 18:00",
+  "user_nlu": "[restaurant] [inform] people 6",
+  "match":"6",
+  "pointer": "0,0,0,1,1,0",
+  "out_act":"[restaurant] [nobook] [request] time"
+},
+{ "prev_act": "[restaurant] [nobook] [request] time",
+  "curr_bs": "[restaurant] area centre day monday food indian people 6 pricerange expensive time 18:00",
+  "user_nlu": "[restaurant] [inform] time 17:00",
+  "match":"6",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":""
+},
+{ "prev_act": "",
+  "curr_bs": "[restaurant] area east day monday food indian people 6 pricerange expensive time 17:00",
+  "user_nlu": "[restaurant] [request] reference ?",
+  "match":"2",
+  "pointer": "0,0,1,0,0,1",
+  "out_act":"[restaurant] [offerbooked] reference [general] [reqmore]"
+},
+{ "prev_act": "[restaurant] [offerbooked] reference [general] [reqmore]",
+  "curr_bs": "[restaurant] area east day monday food indian people 6 pricerange expensive time 17:00",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [reqmore]"
+}
+]
+}

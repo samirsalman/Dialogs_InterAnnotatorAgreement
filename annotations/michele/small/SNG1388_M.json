@@ -1,0 +1,67 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] price expensive area centre",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] area centre pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area centre pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food greek",
+  "prev_act": "[restaurant] [request] food",
+  "out_bs" : "[restaurant] area centre food greek pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area centre food greek pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food british",
+  "prev_act": "[restaurant] [request] food",
+  "out_bs" : "[restaurant] area centre food british pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area centre food british pricerange expensive",
+  "user_nlu": "[restaurant] [inform] time 15:45 day saturday people 2",
+  "prev_act": "[restaurant] [inform] choice [recommend] name",
+  "out_bs" : "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45"
+},
+{ "prev_bs" : "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [offerbooked] reference [general] [reqmore]",
+  "out_bs" : "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] price expensive area centre",
+  "match":"33",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [request] food"
+},
+{ "prev_act": "[restaurant] [request] food",
+  "curr_bs": "[restaurant] area centre food greek pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food greek",
+  "match":"0",
+  "pointer": "1,0,0,0,0,0",
+  "out_act":"[restaurant] [request] food"
+},
+{ "prev_act": "[restaurant] [request] food",
+  "curr_bs": "[restaurant] area centre food british pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food british",
+  "match":"3",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [inform] choice [recommend] name"
+},
+{ "prev_act": "[restaurant] [inform] choice [recommend] name",
+  "curr_bs": "[restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45",
+  "user_nlu": "[restaurant] [inform] time 15:45 day saturday people 2",
+  "match":"3",
+  "pointer": "0,0,1,0,0,1",
+  "out_act":"[restaurant] [offerbooked] reference [general] [reqmore]"
+},
+{ "prev_act": "[restaurant] [offerbooked] reference [general] [reqmore]",
+  "curr_bs": "restaurant] area centre day saturday food british people 2 pricerange expensive time 15:45",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}

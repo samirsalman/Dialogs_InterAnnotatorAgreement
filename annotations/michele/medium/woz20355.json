@@ -1,0 +1,55 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] food australian price expensive",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] food australian pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] food australian pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food asian oriental",
+  "prev_act": "[restaurant] [inform] food [nooffer] [request] food",
+  "out_bs" : "[restaurant] food asian oriental pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] food asian oriental pricerange expensive",
+  "user_nlu": "[restaurant] [request] area ? phone ?",
+  "prev_act": "[restaurant] [inform] name food",
+  "out_bs" : "[restaurant] food asian oriental pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] food asian oriental pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [inform] phone name area [general] [reqmore]",
+  "out_bs" : "[restaurant] food asian oriental pricerange expensive"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] food australian price expensive",
+  "match":"0",
+  "pointer": "1,0,0,0,0,0",
+  "out_act":"[restaurant] [inform] food [nooffer] [request] food"
+},
+{ "prev_act": "[restaurant] [inform] food [nooffer] [request] food",
+  "curr_bs": "[restaurant] food asian oriental pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food asian oriental",
+  "match":"2",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [inform] name food"
+},
+{ "prev_act": "[restaurant] [inform] name food",
+  "curr_bs": "[restaurant] food asian oriental pricerange expensive",
+  "user_nlu": "[restaurant] [request] area ? phone ?",
+  "match":"2",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [inform] phone name area [general] [reqmore]"
+},
+{ "prev_act": "[restaurant] [inform] phone name area [general] [reqmore]",
+  "curr_bs": "[restaurant] food asian oriental pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}

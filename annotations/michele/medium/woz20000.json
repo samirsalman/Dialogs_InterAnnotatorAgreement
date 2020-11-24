@@ -1,0 +1,67 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] price expensive area south",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] area south pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area south pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food do n't care",
+  "prev_act": "[restaurant] [inform] price choice area [request] food",
+  "out_bs" : "[restaurant] area south food do n't care pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area south food do n't care pricerange expensive",
+  "user_nlu": "[restaurant] [request] address ?",
+  "prev_act": "[restaurant] [inform] name food area",
+  "out_bs" : "[restaurant] area south food do n't care pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area south food do n't care pricerange expensive",
+  "user_nlu": "[restaurant] [request] food ?",
+  "prev_act": "[restaurant] [inform] address [general] [reqmore]",
+  "out_bs" : "[restaurant] area south food do n't care pricerange expensive"
+},
+{ "prev_bs" : "[restaurant] area south food do n't care pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [inform] area",
+  "out_bs" : "[restaurant] area south food do n't care pricerange expensive"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] price expensive area south",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] price choice area [request] food"
+},
+{ "prev_act": "[restaurant] [inform] price choice area [request] food",
+  "curr_bs": "[restaurant] area south food do n't care pricerange expensive",
+  "user_nlu": "[restaurant] [inform] food do n't care",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] name food area"
+},
+{ "prev_act": "[restaurant] [inform] name food area",
+  "curr_bs": "[restaurant] area south food do n't care pricerange expensive",
+  "user_nlu": "[restaurant] [request] address ?",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] address [general] [reqmore]"
+},
+{ "prev_act": "[restaurant] [inform] address [general] [reqmore]",
+  "curr_bs": "[restaurant] area south food do n't care pricerange expensive",
+  "user_nlu": "[restaurant] [request] food ?",
+  "match":"5",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] area"
+},
+{ "prev_act": "[restaurant] [inform] area",
+  "curr_bs": "[restaurant] area south food do n't care pricerange expensive",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}

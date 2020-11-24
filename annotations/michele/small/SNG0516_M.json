@@ -1,0 +1,103 @@
+{
+"beliefs":[
+{ "prev_bs" : "",
+  "user_nlu": "[restaurant] [inform] none none",
+  "prev_act": "[general] [welcome]",
+  "out_bs" : "[restaurant] none none"
+},
+{ "prev_bs" : "[restaurant] none none",
+  "user_nlu": "[restaurant] [inform] area centre",
+  "prev_act": "[restaurant] [request] food",
+  "out_bs" : "[restaurant] area centre"
+},
+{ "prev_bs" : "[restaurant] area centre",
+  "user_nlu": "[restaurant] [inform] price cheap",
+  "prev_act": "[restaurant] [inform] food choice area [nooffer]",
+  "out_bs" : "[restaurant] area centre pricerange cheap"
+},
+{ "prev_bs" : "[restaurant] area centre pricerange cheap",
+  "user_nlu": "[restaurant] [inform] none none",
+  "prev_act": "[restaurant] [inform] choice area price [request] food",
+  "out_bs" : "[restaurant] area centre pricerange cheap"
+},
+{ "prev_bs" : "[restaurant] area centre pricerange cheap",
+  "user_nlu": "[restaurant] [inform] food italian",
+  "prev_act": "[restaurant] [recommend] name",
+  "out_bs" : "[restaurant] area centre food italian pricerange cheap"
+},
+{ "prev_bs" : "[restaurant] area centre food italian pricerange cheap",
+  "user_nlu": "[restaurant] [inform] day tuesday people 2",
+  "prev_act": "[restaurant] [recommend] name",
+  "out_bs" : "[restaurant] area centre food italian name pizza hut city centre pricerange cheap"
+},
+{ "prev_bs" : "[restaurant] area centre food italian name pizza hut city centre pricerange cheap",
+  "user_nlu": "[restaurant] [inform] time 13:15",
+  "prev_act": "[restaurant] [request] time",
+  "out_bs" : "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15"
+},
+{ "prev_bs" : "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15",
+  "user_nlu": "[general] [thank]",
+  "prev_act": "[restaurant] [offerbooked] reference",
+  "out_bs" : "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15"
+}
+],
+
+"actions": [
+{ "prev_act": "[general] [welcome]",
+  "curr_bs": "",
+  "user_nlu": "[restaurant] [inform] none none",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[restaurant] [request] food"
+},
+{ "prev_act": "[restaurant] [request] food",
+  "curr_bs": "[restaurant] area centre",
+  "user_nlu": "[restaurant] [inform] area centre",
+  "match":"69",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] food choice area [nooffer]"
+},
+{ "prev_act": "[restaurant] [inform] food choice area [nooffer]",
+  "curr_bs": "[restaurant] area centre pricerange cheap",
+  "user_nlu": "[restaurant] [inform] price cheap",
+  "match":"15",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [inform] choice area price [request] food"
+},
+{ "prev_act": "[restaurant] [inform] choice area price [request] food",
+  "curr_bs": "[restaurant] area centre pricerange cheap",
+  "user_nlu": "[restaurant] [inform] none none",
+  "match":"15",
+  "pointer": "0,0,0,1,0,0",
+  "out_act":"[restaurant] [recommend] name"
+},
+{ "prev_act": "[restaurant] [recommend] name",
+  "curr_bs": "[restaurant] area centre food italian pricerange cheap",
+  "user_nlu": "[restaurant] [inform] food italian",
+  "match":"3",
+  "pointer": "0,0,1,0,0,0",
+  "out_act":"[restaurant] [recommend] name"
+},
+{ "prev_act": "[restaurant] [recommend] name",
+  "curr_bs": "[restaurant] area centre food italian name pizza hut city centre pricerange cheap",
+  "user_nlu": "[restaurant] [inform] day tuesday people 2",
+  "match":"1",
+  "pointer": "0,1,0,0,0,0",
+  "out_act":"[restaurant] [request] time"
+},
+{ "prev_act": "[restaurant] [request] time",
+  "curr_bs": "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15",
+  "user_nlu": "[restaurant] [inform] time 13:15",
+  "match":"1",
+  "pointer": "0,1,0,0,0,1",
+  "out_act":"[restaurant] [offerbooked] reference"
+},
+{ "prev_act": "[restaurant] [offerbooked] reference",
+  "curr_bs": "[restaurant] area centre day tuesday food italian name pizza hut city centre people 2 pricerange cheap time 13:15",
+  "user_nlu": "[general] [thank]",
+  "match":"",
+  "pointer": "0,0,0,0,0,0",
+  "out_act":"[general] [bye]"
+}
+]
+}
