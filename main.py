@@ -25,7 +25,7 @@ def rules_equal(r1, r2, rule_type):
     for k in r1.keys():
         if r1[k] != r2[k]:
             print(f'Rule type: {rule_type}\nKey: {k}\nR1: {r1[k]}\nR2: {r2[k]}')
-            print(25 * '*')
+            print(25 * '*' + "\n")
 
             return False
     return True
@@ -62,8 +62,21 @@ def compute_inter_ann_agreement(set):
     fs1, fs2 = load_files(f"./annotations/michele/{set}/", f"./annotations/samir/{set}/")
     A, B, TOT = compute_rules(f"./annotations/michele/{set}/", f"./annotations/samir/{set}/", fs1, fs2)
 
-    return A/TOT, B/TOT
+    return A/TOT, B/TOT, set
 
 
-ac, be = compute_inter_ann_agreement("small")
-print(f"Actions agreement:{ac}\nBeliefs agreement:{be}")
+ac, be, set = compute_inter_ann_agreement("small")
+print(f"For {set} set\n\nActions agreement:{ac}\nBeliefs agreement:{be}")
+
+small = open("small_results.csv", "w+")
+small.write("action_agreement,belief_agreement\n"
+            f"{ac},{be}")
+small.close()
+
+ac, be, set = compute_inter_ann_agreement("medium")
+print(f"For {set} set\n\nActions agreement:{ac}\nBeliefs agreement:{be}")
+
+medium = open("medium_results.csv", "w+")
+medium.write("action_agreement,belief_agreement\n"
+            f"{ac},{be}")
+medium.close()
